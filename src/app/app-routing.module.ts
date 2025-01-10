@@ -8,8 +8,36 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'registro',
     pathMatch: 'full'
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'principal',
+    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'adoptar',
+    loadChildren: () => import('./pages/adoptar/adoptar.module').then( m => m.AdoptarPageModule)
+  },
+  {
+    path: 'agendar',
+    loadChildren: () => import('./pages/agendar/agendar.module').then( m => m.AgendarPageModule)
+  },
+  {
+    path: 'daradopcion',
+    loadChildren: () => import('./pages/daradopcion/daradopcion.module').then( m => m.DaradopcionPageModule)
   },
 ];
 

@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+      <ion-back-button></ion-back-button> <!--boton para retroceder-->
+    </ion-buttons>
+    <ion-title style="text-align: center;">Agendar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>Agendar Cita</h1>
+  </div>
+  <div>
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+
+    <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+      El correo debe terminar en arroba gmail.com.
+    </div>
+
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Telefono" labelPlacement="floating" placeholder="Ingrese su telefono" [(ngModel)]="tel" type="tel"></ion-input>
+    </ion-item>
+
+    <div class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
+      El telefono debe empezar con +569********.
+    </div>
+
+    <ion-item>
+      <ion-input label="Edad" labelPlacement="floating" placeholder="Ingrese su Edad" [(ngModel)]="edad" type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Fecha de la cita (día/mes/año)"
+        labelPlacement="stacked"
+        placeholder="dd/mm/yyyy"
+        [(ngModel)]="fecha"
+        name="fecha"
+        required
+        pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/([0-9]{4})$">
+      </ion-input>
+    </ion-item>
+    <div>
+      <ion-button expand="block" (click)="irPrincipal()" [disabled]="!email || !nombre || !tel || !edad || !fecha || !esCorreoValido() || !esTelefonoValido()">Agendar</ion-button>
+      <ion-button expand="block" (click)="irInfo()">Cancelar</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,3 +1,33 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="main-content"> <!--si tenemos mas de un menu hay que ponerle aqui contentId="main-content"-->
+    <ion-header>  <!--aqui puede ir el logo o un titulo normal-->
+      <ion-toolbar color="secondary"> <!--con esto le ponemos un color en el titulo del menu-->
+        <ion-title>Menú Principal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-menu-toggle> <!--con esto cuando vaya de un item del menu a otro este menu desaparecera para que tenga una mejor experiencia-->
+        <ion-list>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/principal']"> <!--asi debe ir -->
+            <ion-icon name="home-outline"></ion-icon>
+            <ion-label>Principal</ion-label>
+          </ion-item>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/info']">
+            <ion-icon name="information-outline"></ion-icon>
+            <ion-label>Informacion Mascotas</ion-label>
+          </ion-item>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/adoptar']">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-label>Adoptar</ion-label>
+          </ion-item>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/agendar']">
+            <ion-icon name="book-outline"></ion-icon>
+            <ion-label>Agendar Cita</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
 </ion-app>

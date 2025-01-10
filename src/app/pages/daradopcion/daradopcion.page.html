@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>daradopcion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>Formulario de Dar en Adopción</h1>
+  </div>
+  <div>
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+      El correo debe terminar en arroba gmail.com.
+    </div>
+
+    <ion-item>
+      <ion-input label="Edad" labelPlacement="floating" placeholder="Ingrese sus edad" [(ngModel)]="edad" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Telefono" labelPlacement="floating" placeholder="Ingrese su numero telefonico" [(ngModel)]="tel"></ion-input>
+    </ion-item>
+
+    <div class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
+      El telefono debe empezar con +569********.
+    </div>
+
+    <ion-item>
+      <ion-input label="Nombre de la Mascota" labelPlacement="floating" placeholder="Ingrese nombre mascota" [(ngModel)]="nomMasc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Edad de la mascota" labelPlacement="floating" placeholder="Ingrese edad mascota" [(ngModel)]="edadMasc" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Genero de la mascota" labelPlacement="floating" placeholder="Ingrese el genero mascota" [(ngModel)]="genMasc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Caracteristicas de la mascota" labelPlacement="floating" placeholder="Ingrese informacion de la mascota" [(ngModel)]="caracMasc"></ion-input>
+    </ion-item>
+  </div>
+  <div>
+    <ion-button expand="block" (click)="enviarAdopcion()" [disabled]="!email || !tel || !edad || !edadMasc || !genMasc || !caracMasc || !esCorreoValido() || !esTelefonoValido()">Enviar</ion-button>
+    <ion-button expand="block" (click)="Cancelar()">Cancelar</ion-button>
+  </div>
+</ion-content>

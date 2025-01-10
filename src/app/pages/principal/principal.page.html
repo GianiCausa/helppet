@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+      <ion-back-button></ion-back-button> <!--boton para retroceder-->
+    </ion-buttons>
+    <ion-title style="text-align: center;">HelpPets</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1 style="text-align: center;">Bienvenido a HelpPet</h1>
+  </div>
+  <div *ngFor="let card of card">
+    <ion-card color="secondary" (click)="irInfo(card)">
+      <img alt="conejo blanco" src="{{ card.img }}" />
+      <ion-card-header>
+        <ion-card-title>{{ card.nombreMasc }}</ion-card-title>
+        <ion-card-title>{{ card.especie }}</ion-card-title>
+        <ion-card-title>{{ card.genero }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+</ion-content>

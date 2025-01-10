@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title style="text-align: center;">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1 style="text-align: center;">Inicio de Sesión</h1>
+    <div>
+      <ion-item>
+        <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+
+      <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+        El correo debe terminar en arroba gmail.com.
+      </div>
+      
+      <ion-item>
+        <ion-input label="Contraseña" labelPlacement="floating" placeholder="Ingrese su contraseña" [(ngModel)]="contra" type="password">
+          <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+        </ion-input>
+      </ion-item>
+      
+          <div class="error-message" *ngIf="contra && !esContraValida()" style="text-align: center;">
+            La contraseña debe tener un caracter especial, una mayuscula y un numero.
+          </div>
+    </div>
+    <div>
+      <ion-button expand="block" color="secondary" [disabled]="!email || !contra || contra !== contra || !esCorreoValido() || !esContraValida()" (click)="validarInicio()">Iniciar Sesión</ion-button>
+      <ion-button expand="block" color="secondary" (click)="IrRegistro()">Registrarse</ion-button>
+      <ion-button expand="block" color="secondary" (click)="limpiarRegistro()">Limpiar</ion-button>
+    </div>
+  </div>
+</ion-content>
