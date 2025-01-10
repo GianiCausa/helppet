@@ -13,9 +13,9 @@
             <ion-icon name="home-outline"></ion-icon>
             <ion-label>Principal</ion-label>
           </ion-item>
-          <ion-item [routerDirection]="'root'" [routerLink]="['/info']">
+          <ion-item [routerDirection]="'root'" [routerLink]="['/info']"> <!--asi debe ir -->
             <ion-icon name="information-outline"></ion-icon>
-            <ion-label>Informacion Mascotas</ion-label>
+            <ion-label>Informacion de Mascota</ion-label>
           </ion-item>
           <ion-item [routerDirection]="'root'" [routerLink]="['/adoptar']">
             <ion-icon name="heart-outline"></ion-icon>
@@ -24,6 +24,14 @@
           <ion-item [routerDirection]="'root'" [routerLink]="['/agendar']">
             <ion-icon name="book-outline"></ion-icon>
             <ion-label>Agendar Cita</ion-label>
+          </ion-item>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/daradopcion']">
+            <ion-icon name="duplicate-outline"></ion-icon>
+            <ion-label>Formulario Dar en Adopcion</ion-label>
+          </ion-item>
+          <ion-item [routerDirection]="'root'" [routerLink]="['/perfil']">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <ion-label>Perfil Usuario</ion-label>
           </ion-item>
         </ion-list>
       </ion-menu-toggle>

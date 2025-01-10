@@ -1,32 +1,41 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>daradopcion</ion-title>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+      <ion-back-button></ion-back-button> <!--boton para retroceder-->
+    </ion-buttons>
+    <ion-title style="text-align: center;">Dar en Adopción</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div>
-    <h1>Formulario de Dar en Adopción</h1>
+    <h1 style="text-align: center;">Formulario de Dar en Adopción</h1>
   </div>
-  <div>
+  <ion-card>
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
       El correo debe terminar en arroba gmail.com.
-    </div>
+    </ion-text>
 
     <ion-item>
       <ion-input label="Edad" labelPlacement="floating" placeholder="Ingrese sus edad" [(ngModel)]="edad" type="number"></ion-input>
     </ion-item>
+
+    <ion-text color="danger" class="error-message" *ngIf="edad < 18" style="text-align: center;">
+      No cumple con la mayoria de edad necesaria
+    </ion-text>
+
     <ion-item>
       <ion-input label="Telefono" labelPlacement="floating" placeholder="Ingrese su numero telefonico" [(ngModel)]="tel"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
       El telefono debe empezar con +569********.
-    </div>
+    </ion-text>
 
     <ion-item>
       <ion-input label="Nombre de la Mascota" labelPlacement="floating" placeholder="Ingrese nombre mascota" [(ngModel)]="nomMasc"></ion-input>
@@ -40,9 +49,10 @@
     <ion-item>
       <ion-input label="Caracteristicas de la mascota" labelPlacement="floating" placeholder="Ingrese informacion de la mascota" [(ngModel)]="caracMasc"></ion-input>
     </ion-item>
-  </div>
+  
   <div>
     <ion-button expand="block" (click)="enviarAdopcion()" [disabled]="!email || !tel || !edad || !edadMasc || !genMasc || !caracMasc || !esCorreoValido() || !esTelefonoValido()">Enviar</ion-button>
     <ion-button expand="block" (click)="Cancelar()">Cancelar</ion-button>
   </div>
+</ion-card>
 </ion-content>

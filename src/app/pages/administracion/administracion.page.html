@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+      <ion-back-button></ion-back-button> <!--boton para retroceder-->
+    </ion-buttons>
+    <ion-title style="text-align: center;">Administracion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1 style="text-align: center;">Vista Admin</h1>
+  </div>
+  <ion-card>
+    <ion-item>
+      <ion-input label="Nombre Animal" labelPlacement="floating" placeholder="Ingrese nombre" [(ngModel)]="nomMasc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Especie Animal" labelPlacement="floating" placeholder="Ingrese especie" [(ngModel)]="espMasc"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Genero Animal" labelPlacement="floating" placeholder="Ingrese genero" [(ngModel)]="genMasc"></ion-input>
+    </ion-item>
+    <div>
+      <ion-button expand="block" [disabled]="!nomMasc || !espMasc || !genMasc" (click)="irPrincipal()">Confirmar</ion-button>
+      <ion-button expand="block" (click)="irInicio()">Cancelar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

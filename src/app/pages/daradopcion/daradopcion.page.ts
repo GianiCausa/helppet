@@ -42,11 +42,6 @@ export class DaradopcionPage implements OnInit {
   enviarAdopcion(){
     let correcto = true;
 
-    if(this.edad < 18){
-      this.presentToast('bottom','No cumple con la mayoria de edad')
-      correcto = false;
-    }
-
     if(correcto){
       this.presentToast('bottom','Solicitud Enviada')
       this.router.navigate(['/principal'])

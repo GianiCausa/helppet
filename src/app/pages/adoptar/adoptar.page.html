@@ -12,14 +12,14 @@
   <div>
     <h1 style="text-align: center;">Adoptar Mascota</h1>
   </div>
-  <div>
+  <ion-card>
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email" type="email"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
       El correo debe terminar en arroba gmail.com.
-    </div>
+    </ion-text>
 
     <ion-item>
       <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
@@ -28,13 +28,13 @@
       <ion-input label="Telefono" labelPlacement="floating" placeholder="Ingrese su telefono" [(ngModel)]="tel" type="tel"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
       El telefono debe empezar con +569********.
-    </div>
+    </ion-text>
 
-  </div>
   <div>
     <ion-button expand="block" (click)="irAgendar()" [disabled]="!email || !nombre || !tel || !esCorreoValido() || !esTelefonoValido()">Enviar</ion-button>
     <ion-button expand="block" (click)="irInfo()">Cancelar</ion-button>
   </div>
+</ion-card>
 </ion-content>

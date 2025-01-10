@@ -12,14 +12,52 @@
   <div>
     <h1 style="text-align: center;">Bienvenido a HelpPet</h1>
   </div>
-  <div *ngFor="let card of card">
-    <ion-card color="secondary" (click)="irInfo(card)">
-      <img alt="conejo blanco" src="{{ card.img }}" />
-      <ion-card-header>
-        <ion-card-title>{{ card.nombreMasc }}</ion-card-title>
-        <ion-card-title>{{ card.especie }}</ion-card-title>
-        <ion-card-title>{{ card.genero }}</ion-card-title>
-      </ion-card-header>
-    </ion-card>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card color="secondary" (click)="irInfo()">
+            <img alt="conejo blanco" src="/assets/icon/conejo.jpg" />
+            <ion-card-header>
+              <ion-card-title class="tamano">Nombre: Guaton</ion-card-title>
+              <ion-card-title class="tamano">Especie: Conejo</ion-card-title>
+              <ion-card-title class="tamano">Genero: Macho</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="secondary">
+          <img alt="gato blanco y negro" src="/assets/icon/gato.jpg" />
+          <ion-card-header>
+            <ion-card-title class="tamano">Nombre: Colo Colo</ion-card-title>
+            <ion-card-title class="tamano">Especie: Gato</ion-card-title>
+            <ion-card-title class="tamano">Genero: Macho</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card color="secondary">
+            <img alt="conejo blanco" src="/assets/icon/perro1.webp" />
+            <ion-card-header>
+              <ion-card-title class="tamano">Nombre: Benji</ion-card-title>
+              <ion-card-title class="tamano">Especie: Perro</ion-card-title>
+              <ion-card-title class="tamano">Genero: Macho</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card color="secondary">
+          <img alt="gato blanco y negro" src="/assets/icon/gato3.webp" />
+          <ion-card-header>
+            <ion-card-title class="tamano">Nombre: mia</ion-card-title>
+            <ion-card-title class="tamano">Especie: Gato</ion-card-title>
+            <ion-card-title class="tamano">Genero: Hembra</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

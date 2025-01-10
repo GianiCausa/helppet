@@ -12,6 +12,7 @@ export class InicioPage implements OnInit {
 
   email: string = "";
   contra: string = "";
+  emailadmin: string = "miadmin@gmail.com";
 
   constructor(private alertController: AlertController, private router: Router) { }
 
@@ -37,9 +38,14 @@ export class InicioPage implements OnInit {
   validarInicio(){
     let correcto = true;
 
+    if(this.email === this.emailadmin){
+      this.router.navigate(['/administracion'])
+    }else{
+      this.router.navigate(['/principal'])
+    }
+
     if(correcto){
       this.presentAlert("Bienvenido","Esperamos que disfrute la experiencia en HelpPets")
-      this.router.navigate(['/principal'])
     }
   }
 

@@ -74,10 +74,6 @@ export class AgendarPage implements OnInit {
       this.presentToast('bottom','El nombre no puede ir con numeros')
       correcto = false;
     }
-    if(this.edad < 18){
-      this.presentToast('bottom','No cumple con la mayoria de edad')
-      correcto = false;
-    }
 
     if (!this.fechaValida()) {
       this.presentAlert("Error en la fecha","La fecha no puede ser una fecha pasada al dia actual");

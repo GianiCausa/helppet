@@ -10,16 +10,16 @@
 
 <ion-content [fullscreen]="true">
   <div>
-    <h1>Agendar Cita</h1>
+    <h1 style="text-align: center;">Agendar Cita</h1>
   </div>
-  <div>
+  <ion-card>
     <ion-item>
       <ion-input label="Email" labelPlacement="floating" placeholder="Ingrese su email" [(ngModel)]="email" type="email"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="email && !esCorreoValido()" style="text-align: center;"> 
       El correo debe terminar en arroba gmail.com.
-    </div>
+    </ion-text>
 
     <ion-item>
       <ion-input label="Nombre" labelPlacement="floating" placeholder="Ingrese su nombre" [(ngModel)]="nombre"></ion-input>
@@ -28,13 +28,17 @@
       <ion-input label="Telefono" labelPlacement="floating" placeholder="Ingrese su telefono" [(ngModel)]="tel" type="tel"></ion-input>
     </ion-item>
 
-    <div class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
+    <ion-text color="danger" class="error-message" *ngIf="tel && !esTelefonoValido()" style="text-align: center;"> 
       El telefono debe empezar con +569********.
-    </div>
+    </ion-text>
 
     <ion-item>
       <ion-input label="Edad" labelPlacement="floating" placeholder="Ingrese su Edad" [(ngModel)]="edad" type="number"></ion-input>
     </ion-item>
+
+    <ion-text color="danger" class="error-message" *ngIf="edad < 18" style="text-align: center;">
+      No cumple con la mayoria de edad necesaria
+    </ion-text>
 
     <ion-item>
       <ion-input
@@ -51,5 +55,5 @@
       <ion-button expand="block" (click)="irPrincipal()" [disabled]="!email || !nombre || !tel || !edad || !fecha || !esCorreoValido() || !esTelefonoValido()">Agendar</ion-button>
       <ion-button expand="block" (click)="irInfo()">Cancelar</ion-button>
     </div>
-  </div>
+  </ion-card>
 </ion-content>

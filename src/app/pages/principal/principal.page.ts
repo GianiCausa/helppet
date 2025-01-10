@@ -9,40 +9,15 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class PrincipalPage implements OnInit {
 
-  card: any = [
-    {
-      id:1,
-      nombreMasc: 'Guaton',
-      especie: 'Conejo',
-      genero: 'Macho',
-      img: '/assets/icon/conejo.jpg'
-    },
-    {
-      id:2,
-      nombreMasc: 'Colo Colo',
-      especie: 'Gato',
-      genero: 'Macho',
-      img: '/assets/icon/gato.jpg'
-    },
-    {
-      id:3,
-      nombreMasc: 'Benji',
-      especie: 'Perro',
-      genero: 'Macho',
-      img: '/assets/icon/perro1.webp'
-    },
-  ]
+  nombre: string = "";
+  especie: string = "";
+  genero: string = "";
 
   constructor(private router: Router) { }
 
-  irInfo(card: any){
-    let navigationextras: NavigationExtras = {
-      state: {
-        card: card, // Pasamos el objeto card completo
-      },
-    };
+  irInfo(){
 
-    this.router.navigate(['/info'], navigationextras)
+    this.router.navigate(['/info'])
   }
   ngOnInit() {
   }

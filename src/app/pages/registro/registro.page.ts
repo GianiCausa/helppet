@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -35,6 +35,7 @@ export class RegistroPage implements OnInit {
 
     if(correcto){
       this.router.navigate(['/inicio']);
+
     }
 
   }
